@@ -1,0 +1,416 @@
+// 全局样式定义
+@import './_agile';
+@import './_flex';
+@font-face {
+    font-family: 'TsukuARdGothic';
+    src: url('./fonts/TsukuARdGothic.ttf');
+}
+
+html {
+    font-family: Helvetica Neue, Tahoma, Arial, PingFangSC-Regular, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    line-height: 1.6;
+    background-color: @white;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+body {
+    font-size: @fs28;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
+body,
+button,
+dd,
+dl,
+ol,
+ul,
+p,
+h1,
+h3,
+ul {
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+}
+
+.icon {
+    /* 通过设置 font-size 来改变图标大小 */
+    width: 1em;
+    height: 1em;
+    /* 图标和文字相邻时，垂直对齐 */
+    vertical-align: -0.15em;
+    /* 通过设置 color 来改变 SVG 的颜色/fill */
+    fill: currentColor;
+    /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示
+             normalize.css 中也包含这行 */
+    overflow: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+    outline: none;
+    border: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input {
+    background: transparent;
+}
+
+input,
+textarea,
+keygen,
+select,
+button {
+    font-family: Helvetica Neue, Tahoma, Arial, PingFangSC-Regular, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+}
+
+a {
+    color: @color-primary;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+.ff-number {
+    font-family: TsukuARdGothic;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+
+/* font size
+-------------------------- */
+
+.fs16 {
+    font-size: @fs16;
+}
+
+.fs20 {
+    font-size: @fs20;
+}
+
+.fs24 {
+    font-size: @fs24;
+}
+
+.fs28 {
+    font-size: @fs28;
+}
+
+.fs32 {
+    font-size: @fs32;
+}
+
+.fs36 {
+    font-size: @fs36;
+}
+
+.fs40 {
+    font-size: @fs40;
+}
+
+.fs48 {
+    font-size: @fs48;
+}
+
+.fwb {
+    font-weight: bold;
+}
+
+
+/* Colors
+-------------------------- */
+
+.color-primary {
+    color: @color-primary;
+}
+
+.color-tiffany-blue {
+    color: @color-tiffany-blue;
+}
+
+.color-primary-dark {
+    color: @color-primary-dark;
+}
+
+.color-tiffany-blue {
+    color: @color-tiffany-blue;
+}
+
+.color-black {
+    color: @color-black;
+}
+
+.extra-light-black {
+    color: @extra-light-black;
+}
+
+.color-gray {
+    color: @gray;
+}
+
+.dark-gray {
+    color: @dark-gray;
+}
+
+.light-gray {
+    color: @light-gray;
+}
+
+.steel-gray {
+    color: @steel-gray;
+}
+
+
+/* mint-ui
+-------------------------- */
+
+.picker-toolbar {
+    .mint-datetime-cancel {
+        text-align: left;
+        padding-left: @l32;
+        font-size: @fs28;
+    }
+    .mint-datetime-confirm {
+        text-align: right;
+        padding-right: @l32;
+        font-size: @fs28;
+    }
+}
+
+// ----------- jczzq --------------
+* {
+    box-sizing: border-box;
+}
+
+.min-height-100 {
+    min-height: 100vh;
+}
+
+.v-line {
+    display: inline-block;
+    width: 1px;
+    /*no*/
+    height: 100%;
+    background-color: #E4E4E4;
+    border: none;
+    overflow: hidden;
+}
+
+.h-line {
+    display: block;
+    height: 1px;
+    /*no*/
+    background-color: #E4E4E4;
+    border: none;
+    overflow: hidden;
+}
+
+// 单行不换 eg:XXXX...
+.no-wrap {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// 细体
+.ft-light {
+    font-family: 'PingFangSC-Light', 'Microsoft Yahei Light';
+    font-weight: normal;
+}
+
+// 常规
+.ft-normal {
+    font-family: 'PingFangSC-Regular', 'Microsoft Yahei';
+    font-weight: normal;
+}
+
+// 粗体
+.ft-bold {
+    font-family: 'PingFangSC-Medium', 'Microsoft Yahei';
+    font-weight: bold;
+}
+
+// 缩进两个字符
+.tidt2 {
+    text-indent: 2em;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.btn-xs {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-finish {
+    display: inline-block;
+    width: 150px;
+    height: 45px;
+    line-height: 45px;
+    font-size: @fs32;
+    border-radius: 25px;
+    color: white;
+    text-align: center;
+    background-color: @color-tiffany-blue;
+}
+
+.background-contain {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: border-box;
+    background-size: contain;
+}
+
+.background-cover {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: border-box;
+    background-size: cover;
+}
+
+// 过渡动画 cubic-bezier(1.0, 0.5, 0.8, 1.0);
+// 下出上入
+.slide-toggle-enter-active,
+.slide-toggle-leave-active {
+    transition: all .3s ease;
+}
+
+.slide-toggle-enter {
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+.slide-toggle-leave-active {
+    transform: translateY(10px);
+    opacity: 0;
+}
+
+// 上出上入
+.slide-up-enter-active,
+.slide-up-leave-active {
+    transition: all .3s ease;
+}
+
+.slide-up-enter,
+.slide-up-leave-active {
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+// 左出右入
+.slide-left-enter-active,
+.slide-left-leave-active {
+    transition: all .3s ease;
+}
+
+.slide-left-enter {
+    transform: translateX(10px);
+    opacity: 0;
+}
+
+.slide-left-leave-active {
+    transform: translateX(-10px);
+    opacity: 0;
+}
+
+// 右出左入
+.slide-right-enter-active,
+.slide-right-leave-active {
+    transition: all .3s ease;
+}
+
+.slide-right-enter {
+    transform: translateX(-10px);
+    opacity: 0;
+}
+
+.slide-right-leave-active {
+    transform: translateX(10px);
+    opacity: 0;
+}
+
+// ----------- jczzq --------------
