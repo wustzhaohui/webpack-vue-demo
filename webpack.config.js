@@ -1,6 +1,7 @@
 'use strict'
 const path = require('path')
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 function resolve(dir) {
     return path.join(__dirname, '..', dir)
@@ -13,7 +14,6 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/dist/'
 
     },
     module: {
@@ -65,15 +65,13 @@ module.exports = {
         inline: true, //实时刷新
         port: '8089'
     },
-    performance: {
-        hints: false
-    },
     devtool: '#eval-source-map',
+    plugins: [new HtmlWebpackPlugin()]
 }
 
 if (process.env.NODE_ENV === 'production') {
     module.exports.devtool = '#source-map'
-    // http://vue-loader.vuejs.org/en/workflow/production.html
+        // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({
             'process.env': {
